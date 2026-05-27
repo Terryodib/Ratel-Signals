@@ -6,6 +6,7 @@ export default function TelegramPage() {
   const [message, setMessage] = useState('Hello from Ratel Signals!');
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
+  const backendUrl = process.env.NEXT_PUBLIC_TELEGRAM_BACKEND_URL || 'https://your-backend-url.example.com';
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,7 +14,7 @@ export default function TelegramPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/alerts/telegram', {
+      const response = await fetch(`${backendUrl}/send-alert`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),

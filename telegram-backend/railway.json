@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "heroku",
+    "buildCommand": "npm install",
+    "startCommand": "npm start"
+  },
+  "deploy": {
+    "service": {
+      "name": "ratel-signals-telegram-bot"
+    }
+  }
+}
