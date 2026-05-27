@@ -28,7 +28,7 @@ FRONTEND_ORIGIN=https://your-netlify-site.netlify.app
 ```bash
 cd telegram-backend
 npm install
-cp .env.example .env
+cp env.example .env
 # edit .env with your bot token and webhook URL
 npm run dev
 ```
